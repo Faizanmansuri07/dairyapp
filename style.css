@@ -1,0 +1,485 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+    transition: 0.4s;
+    list-style: none;
+}
+html, body {
+    height: 100%;
+}
+.pop-ups{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    transform: translateX(0);
+    position: absolute;
+    top: 10px;
+    gap: 10px;
+}
+.pop-ups li {
+    background-color: #e0e0e0;
+    padding: 10px 20px;
+    border-radius: 4px;
+    opacity: 0;
+    /* z-index: 3; */
+}
+
+.showPopup{
+    animation: pop 2s 5ms ease;
+}
+@keyframes pop {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+body {
+    background-color: #f4f4f9;
+    color: #333;
+    overflow-x: hidden;
+    background-image: url(view-dairy-products-assortment.jpg);
+    background-repeat: no-repeat;
+    /* background-size: cover; */
+    /* height: auto; */
+    background-size:cover;
+}
+
+.header {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Operations Buttons */
+.operations {
+    width: 98%;
+    display: flex;
+    /* align-items: center; */
+    /* justify-content: center; */
+    flex-direction: column;
+    margin: 20px 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    gap: 25px;
+    /* background-color: #e0e0e0; */
+    backdrop-filter: blur(30px);
+    border: 1px solid #ddd;
+    padding: 30px 5px;
+    border-radius: 4px;
+}
+.text{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+}
+#text {
+    font-size: 30px;
+    font-weight: 600;
+}
+.text img{
+    width: 38px;
+    animation: size 0.6s ease-in infinite;
+}
+#author{
+    text-align: center;
+    /* color: #2980b9; */
+    font-size: 16px;
+    font-weight: 600;
+
+}
+@keyframes size {
+    0%{
+        transform: scale(0.9);
+    }
+    25%{
+        transform: scale(1);
+    }
+    75%{
+        transform: scale(1.1);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+
+.operations .buttons {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.operations button {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 10px 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    margin: 0 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.operations button:hover {
+    background-color: #2980b9;
+    transform: translateY(-3px);
+}
+.operations button:disabled{  
+    cursor: not-allowed;
+    background-color: #c0392b;
+ }
+/* Customer Card Form */
+.customer-card {
+    width: 350px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.customer-card input {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    outline: none;
+}
+
+.customer-card input:focus {
+    border-color: #3498db;
+}
+
+.customer-card button {
+    background-color: #2ecc71;
+    color: white;
+    border: none;
+    padding: 10px 0;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.customer-card button:hover {
+    background-color: #27ae60;
+}
+
+/* Milk Entry Form */
+.milk-entry {
+    width: 350px;
+    background: linear-gradient(135deg, #ffffff, #f0f8ff);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 12px 18px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    transition: all 0.3s ease-in-out;
+    margin: 20px 0;
+}
+
+/* Inputs and Select Fields */
+.milk-entry select,
+.milk-entry input {
+    width: 100%;
+    padding: 12px 15px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    margin-bottom: 20px;
+}
+
+/* Focused Inputs */
+.milk-entry select:focus,
+.milk-entry input:focus {
+    border-color: #3498db;
+    box-shadow: 0 0 8px rgba(52, 152, 219, 0.6);
+}
+
+/* Add icon to inputs (Optional) */
+/* .milk-entry input::placeholder,
+.milk-entry select::placeholder {
+    color: #aaa;
+    font-size: 14px;
+} */
+
+/* Buttons */
+.milk-entry button {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 12px 0;
+    font-size: 16px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    width: 100%;
+}
+
+.milk-entry button:hover {
+    background-color: #c0392b;
+    transform: translateY(-3px);
+}
+
+/* Add Shadow on hover for milk-entry */
+.milk-entry:hover {
+    box-shadow: 0 16px 24px rgba(0, 0, 0, 0.1);
+}
+/* Popup Modal */
+.container {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.4s;
+}
+
+.container.show {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.container #close {
+    color: white;
+    font-size: 32px;
+    position: absolute;
+    right: 30px;
+    top: 20px;
+    cursor: pointer;
+}
+.result {
+    overflow-x: auto; /* Add horizontal scroll */
+    padding: 20px;
+}
+
+.result table {
+    width: 100%; 
+    border-collapse: collapse; 
+}
+
+.result table th, 
+.result table td {
+    padding: 10px; 
+    text-align: left; 
+    word-wrap: break-word; 
+}
+
+.result table th:first-child, 
+.result table td:first-child {
+    width: 100px; 
+    min-width: 100px; 
+}
+
+.result table th:nth-child(2), 
+.result table td:nth-child(2) {
+    width: 150px; 
+    min-width: 150px; 
+}
+
+.result table th:nth-child(n+3):nth-child(-n+9), 
+.result table td:nth-child(n+3):nth-child(-n+9) {
+    width: 50px; 
+    min-width: 50px; 
+}
+
+
+.result table th:last-child, 
+.result table td:last-child {
+    width: 80px; 
+    min-width: 80px; 
+}
+#removeRecord{
+    background-color: transparent;
+    border: none;
+    outline: none;
+    font-size: 25px;
+    color: red;
+    width: 100%;
+    text-align: center;
+}
+
+.bill {
+    position: absolute;
+    width: 320px;
+    background-color: #ffffff;
+    border-radius: 15px;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    gap: 20px;
+    overflow: hidden;
+}
+
+.search {
+    display: flex;
+    width: 100%;
+    position: relative;
+}
+
+.search input {
+    width: 100%;
+    padding: 15px 45px 15px 15px;
+    border: none;
+    border-radius: 10px;
+    background-color: #f1f1f1;
+    font-size: 16px;
+    outline: none;
+}
+
+.search button {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    /* background-color: #4CAF50; */
+    border: none;
+    color: #333;
+    padding: 10px 15px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.search button i {
+    font-size: 18px;
+}
+
+.bill img {
+    width: 80px;
+    border-radius: 50%;
+    /* border: 3px solid #4CAF50; */
+    margin-top: 20px;
+}
+
+#customer-name {
+    color: #333;
+    font-size: 20px;
+    font-weight: bold;
+}
+.details{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+th, td {
+    padding: 15px;
+    text-align: center;
+}
+
+th {
+    background-color: #2980b9;
+    color: white;
+}
+
+tbody tr {
+    border-bottom: 1px solid #e0e0e0;
+}
+
+tbody tr:last-child {
+    border-bottom: none;
+}
+
+#pay {
+    width: 100%;
+    padding: 15px;
+    background-color: #2980b9;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+    margin-bottom: 60px;
+}
+
+#pay:hover {
+    background-color: #45a049;
+}
+
+.op{
+    position: absolute;
+    bottom: 20px;
+    right: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    font-size: 20px;
+}
+
+.prev:hover, .next:hover {
+    background-color: #45a049;
+}
+ #next, #prev {
+    background-color: #2980b9;
+    padding: 10px 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    color: white;
+}
+i:disabled{  
+    cursor: not-allowed;
+    background-color: #c0392b;
+ }
+
+ @media (max-width : 580px) {
+    .buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    .buttons button {
+        font-size: 16px;
+        padding: 10px 5px;
+        width: 120px;
+
+    }
+    #text {
+        font-size: 20px;
+    }
+    .text img{
+        width: 25px;
+    }
+ }
+ @media (max-width : 380px) {
+    #text{
+        font-size: 18px;
+    }
+ }

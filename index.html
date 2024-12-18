@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dairy management app</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <div class="operations">
+        <div class="text">
+            <p id="text"></p>
+            
+        </div>
+        <div class="buttons">
+            <button id="showCustomer">Add customer</button>
+            <button id="makeEntry">Milk Entries</button>
+            <button id="show">display entries</button>
+            <button id="billsBtn">Bills</button>
+        </div>
+        <p id="author">Developed by Faizan Mansuri</p>
+    </div>
+    
+ 
+
+        <div class="container">
+            <ul class="pop-ups">
+            </ul>
+            <p id="close">&times;</p>
+        <div class="milk-entry">
+            <h3 class="header">Milk entries</h3>
+            <select name="" id="customers">
+                <option value="">select Customer</option>
+            </select>
+
+            <select name="" id="days">
+                <option value="mon">Monday</option>
+                <option value="tue">Tuesday</option>
+                <option value="wed">Wedesday</option>
+                <option value="thu">Thurseday</option>
+                <option value="fri">Friday</option>
+                <option value="sat">Saturday</option>
+                <option value="Son">Sonday</option>
+            </select>
+            <input type="text" id="fixPrice" placeholder="per litre price" readonly>
+            <input type="number" id="milkquantity" placeholder="Enter Milk quantity (litre)">
+            <button id="insertEntry">Add Entry</button>
+        </div>
+
+        <div class="customer-card">
+            <h3 class="header">Add Customers</h3>
+            <input type="text" id="name" placeholder="Enter customer name" required>
+            <input type="number" id="mobile" placeholder="Enter Mobile number" required>
+            <input type="text" id="inititalPrice" placeholder="Enter per litre price" required>
+            <input type="text" id="address" placeholder="Enter address">
+            <button id="addCutsomer">Add Customer</button>
+        </div>
+
+        <div class="result">
+            <table id="preview">
+                <thead>
+                    <!-- Main header row -->
+                    <tr>
+                        <th rowspan="2">Customer ID</th>
+                        <th rowspan="2">Customer Name</th>
+                        <!-- <th>Contact</th> -->
+                        <th rowspan="2">Total Quantity</th>
+                        <th colspan="7">Days of the Week</th>
+                        <th rowspan="2">Remove</th>
+                    </tr>
+            
+                    <!-- Days of the week row -->
+                    <tr>
+                        <th>Monday</th>
+                        <th>Tuesday</th>
+                        <th>Wednesday</th>
+                        <th>Thursday</th>
+                        <th>Friday</th>
+                        <th>Saturday</th>
+                        <th>Sunday</th>
+                    </tr>
+                </thead>
+            <tbody id="tbody">
+
+            </tbody>
+            </table>
+        </div>
+
+
+        <div class="bill">
+            <div class="search">
+                <input type="text" id="search" placeholder="Enter Customer ID to search">
+                <button id="searchBtn"><i class="fas fa-search"></i></button>
+            </div>
+            <div class="details">
+
+            <img src="user (3).png" alt="Customer Image">
+            <p id="customer-name">Dairy User</p>
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th>Total Milk</th>
+                        <th>Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td id="totalQnt">0 Ltr</td>
+                        <td id="total-price">0</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <button id="pay">Pay: 0</button> 
+            
+            <div class="op">
+                <i class="fas fa-chevron-left" id="prev"></i>
+                <i class="fas fa-chevron-right" id="next"></i>
+            </div>
+        </div>
+        </div>
+        </div>
+
+
+        <script src="script.js"></script>
+</body>
+</html>
